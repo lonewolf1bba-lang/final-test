@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 13% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 15%;
+    --primary: 214 100% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 100% 97%;
+    --secondary-foreground: 220 13% 15%;
+    --muted: 214 100% 97%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 214 100% 77%;
+    --accent-foreground: 220 13% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 30% 90%;
+    --input: 214 30% 90%;
+    --ring: 214 100% 68%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-dark font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue-500 via-electric-blue-500 to-electric-blue-300;
+  }
+
+  .gradient-btn {
+    @apply relative overflow-hidden bg-gradient-to-r from-neon-blue-500 to-electric-blue-500 text-white font-semibold transition-all duration-300;
+  }
+
+  .gradient-btn:hover {
+    @apply shadow-glow;
+    filter: brightness(1.1);
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-premium;
+  }
+
+  .glass-dark {
+    @apply bg-dark/80 backdrop-blur-xl border border-white/10;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient-red-orange {
+    @apply bg-gradient-to-r from-neon-blue-brand to-electric-blue-brand bg-clip-text text-transparent;
+  }
+
+  .text-gradient-orange-yellow {
+    @apply bg-gradient-to-r from-electric-blue-brand to-electric-blue-300 bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-premium-lg;
+  }
+
+  .glow-red {
+    box-shadow: 0 0 30px rgba(91, 159, 255, 0.3);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(142, 197, 255, 0.3);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 30px rgba(106, 176, 255, 0.3);
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
