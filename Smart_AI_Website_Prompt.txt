@@ -1,0 +1,610 @@
+================================================================================
+                    SMART AI WEBSITE — COMPLETE BUILD PROMPT
+================================================================================
+
+OVERVIEW
+--------
+Build a fullstack corporate IT services website for a company called "Smart AI" 
+using React 19 + TypeScript + Vite + Tailwind CSS + shadcn/ui + Framer Motion.
+
+Use HashRouter (NOT BrowserRouter) for static hosting compatibility.
+
+================================================================================
+                           COMPANY DETAILS
+                         (USE THESE EXACTLY)
+================================================================================
+
+Company Name:        Smart AI
+Website:             https://smartai.net.in
+Phone:               +91 9811131136
+Email:               contact@smartai.net.in
+GST Number:          09AALFI4939H1ZX
+LinkedIn:            https://www.linkedin.com/company/smart-ai
+Address:             New Delhi, India
+Copyright:           Copyright © 2025 Smart AI. All Rights Reserved.
+
+Stats:
+  - 65+ Years Combined Team Experience
+  - 97K+ Platform Users Served
+  - 24+ Projects Delivered
+  - 14+ Industry Domains
+
+================================================================================
+                              COLOR SYSTEM
+================================================================================
+
+Add these custom colors to tailwind.config.js:
+
+neon-blue: {
+  DEFAULT: "#5B9FFF",
+  brand: "#5B9FFF",
+  50: "#EDF4FF",
+  100: "#D6E8FF",
+  200: "#A8D0FF",
+  300: "#7AB8FF",
+  400: "#5B9FFF",
+  500: "#5B9FFF",
+  600: "#3A7BD5",
+  700: "#2A5FA8",
+}
+
+electric-blue: {
+  DEFAULT: "#8EC5FF",
+  brand: "#8EC5FF",
+  50: "#F0F7FF",
+  100: "#D6EBFF",
+  200: "#B8DAFF",
+  300: "#8EC5FF",
+  400: "#6AB0FF",
+  500: "#8EC5FF",
+  600: "#5B9FFF",
+  700: "#3A7BD5",
+  800: "#2A5FA8",
+}
+
+Also add legacy aliases so existing components work:
+red: { brand: "#5B9FFF", 50: "#EDF4FF", 100: "#D6E8FF", 500: "#5B9FFF", 600: "#3A7BD5", 700: "#2A5FA8" }
+orange: { brand: "#8EC5FF", 50: "#F0F7FF", 100: "#D6EBFF", 400: "#6AB0FF", 500: "#8EC5FF", 600: "#5B9FFF" }
+yellow: { brand: "#6AB0FF", 50: "#F0F7FF", 100: "#D6EBFF", 400: "#8EC5FF", 500: "#8EC5FF" }
+
+cream: "#F0F7FF"
+dark: "#0F172A"
+
+CSS Variables (in index.css @layer base :root):
+--primary: 214 100% 68%
+--primary-foreground: 0 0% 100%
+--secondary: 214 100% 97%
+--secondary-foreground: 220 13% 15%
+--accent: 214 100% 77%
+--accent-foreground: 220 13% 15%
+--muted: 214 100% 97%
+--muted-foreground: 220 9% 46%
+--border: 214 30% 90%
+--input: 214 30% 90%
+--ring: 214 100% 68%
+
+Background gradients:
+- hero-gradient: linear-gradient(135deg, #5B9FFF 0%, #8EC5FF 50%, #A8D0FF 100%)
+- red-orange: linear-gradient(135deg, #5B9FFF 0%, #8EC5FF 100%)
+- orange-yellow: linear-gradient(135deg, #8EC5FF 0%, #A8D0FF 100%)
+
+Shadows:
+- glow: 0 0 20px rgba(91, 159, 255, 0.4)
+- glow-red: 0 0 20px rgba(91, 159, 255, 0.4)
+- glow-yellow: 0 0 20px rgba(142, 197, 255, 0.4)
+
+Text gradient class: bg-gradient-to-r from-neon-blue-brand to-electric-blue-brand bg-clip-text text-transparent
+
+================================================================================
+                           IMAGE ASSETS
+================================================================================
+
+IMPORTANT: Generate ALL images using AI image generation EXCEPT the logo.
+The user will upload their own logo at /images/smartai-logo.png
+
+Generate these images using an image generation tool:
+
+--- SERVICE IMAGES (6 images, 4:3 ratio each) ---
+
+1. /images/service-coe.jpg
+   Prompt: "Sleek modern technology command center with large curved displays showing real-time data analytics, engineers monitoring systems, warm ambient lighting mixing with cool blue screen glow, professional high-tech environment, photorealistic"
+
+2. /images/service-training.jpg
+   Prompt: "Vibrant modern training classroom with diverse professionals learning together, large interactive digital whiteboard with instructor presenting, students with laptops, bright natural daylight through large windows, warm and engaging educational atmosphere, photorealistic"
+
+3. /images/service-development.jpg
+   Prompt: "Dynamic software development team working in a sleek modern office, multiple large monitors showing colorful code and app designs, developers collaborating around a standing desk, plants and modern decor, warm natural lighting, photorealistic workplace photography"
+
+4. /images/service-consultancy.jpg
+   Prompt: "Professional corporate boardroom meeting with executives reviewing business strategy, large screen showing data charts and graphs, warm wood table, floor-to-ceiling windows with city view, natural daylight, premium consulting environment, photorealistic"
+
+5. /images/service-saas.jpg
+   Prompt: "Futuristic cloud computing data center with rows of modern servers, soft blue and white LED lighting, glass walls, clean organized cables, a technician walking through checking systems, professional technology infrastructure, photorealistic"
+
+6. /images/service-engineering.jpg
+   Prompt: "Modern engineering lab with an engineer working at a high-tech workstation, holographic 3D technical diagrams floating in air, IoT devices and circuit boards on desk, blueprint screens, clean industrial design, warm professional lighting, photorealistic"
+
+--- ABOUT PAGE IMAGES (5 images) ---
+
+7. /images/about/experience-1.jpg (4:3)
+   Prompt: "Two professional business colleagues having a friendly discussion at a modern office, man and woman in smart business attire, looking at a tablet together, bright office with glass walls, natural warm lighting, corporate teamwork photo, photorealistic"
+
+8. /images/about/experience-2.jpg (3:2)
+   Prompt: "Young confident professional man smiling at camera while working on laptop, modern open-plan office background, casual smart attire, warm natural window lighting, friendly approachable expression, corporate headshot style, photorealistic"
+
+9. /images/about/experience-3.jpg (3:2)
+   Prompt: "Diverse team of three professionals gathered around a table with papers and laptop, collaborative meeting, woman pointing at document, bright modern meeting room, natural daylight, engaged discussion, photorealistic corporate scene"
+
+10. /images/about/why-choose.jpg (3:4)
+    Prompt: "Top-down aerial view of business professionals hands collaborating over a large wooden table, papers with charts, laptop, tablet, coffee cups, team planning session, warm natural office lighting, photorealistic overhead shot"
+
+11. /images/about/about-hero.jpg (16:9)
+    Prompt: "Wide cinematic shot of a modern corporate office interior at dusk, professionals silhouetted against large windows with warm golden hour light, city skyline visible, contemporary furniture, inspiring workspace atmosphere, photorealistic"
+
+--- BLOG IMAGES (3 images, 1:1 ratio each) ---
+
+12. /images/blog-cover-1.jpg
+    Prompt: "Abstract digital transformation concept art, futuristic holographic interface elements floating in a modern office space, warm golden and teal lighting, technology innovation visual, no text, cinematic photorealistic"
+
+13. /images/blog-cover-2.jpg
+    Prompt: "Modern IT infrastructure visualization, network of connected servers and data centers with soft blue ambient lighting, clean organized server room, professional technology environment, photorealistic with natural color tones"
+
+14. /images/blog-cover-3.jpg
+    Prompt: "Business growth concept, entrepreneur working on laptop in a bright modern co-working space, plants and contemporary furniture, warm natural daylight, professional workspace, success and growth atmosphere, photorealistic"
+
+--- VIDEO ---
+
+15. /videos/hero-bg.mp4
+    Prompt: "Seamless looping background animation. Retro-futuristic blue technology aesthetic. Glowing blue circuit board patterns, digital grid lines, flowing data streams, and holographic particle effects in electric blue and cyan. Abstract retro tech world with pulsing neon blue circuit traces, floating geometric shapes, and subtle scanlines. Deep navy blue background with luminous blue light trails. Smooth, slow, hypnotic motion. No text, no logos. 5 seconds, 16:9"
+
+--- LOGO (USER WILL UPLOAD - DO NOT GENERATE) ---
+
+/images/smartai-logo.png — The user will provide their own logo. Use a placeholder until uploaded.
+
+================================================================================
+                           AUTH SYSTEM
+================================================================================
+
+Create a file src/hooks/useSimpleAuth.ts:
+
+- Uses localStorage ONLY — no backend, no API calls, no tRPC
+- Key: "smartai_user"
+- login(username, password): saves { name: username, email: "", role: "user" } to localStorage
+- register(username, displayName, password): saves { name: displayName || username, email: "", role: "user" }
+- logout(): removes from localStorage, calls window.location.reload()
+- Returns: { user, isAuthenticated, isAdmin, isLoading, login, register, logout }
+
+NO Google OAuth, NO Kimi OAuth, NO database, NO backend API. Pure client-side.
+
+================================================================================
+                              PAGES
+================================================================================
+
+Use HashRouter from react-router. Routes:
+
+/                        → Home
+/about                   → About
+/services                → Services listing
+/services/coe            → Center of Excellence detail
+/services/training       → Technical Trainings detail
+/services/development    → Application Development detail
+/services/consultancy    → Consultancy Services detail
+/services/saas           → Software as a Service detail
+/services/engineering    → Solution Engineering detail
+/blog                    → Blog listing
+/contact                 → Contact
+/login                   → Login/Register
+*                        → 404 redirect to /
+
+================================================================================
+                           NAVBAR COMPONENT
+================================================================================
+
+File: src/components/Navbar.tsx
+- Fixed position, glassmorphism on scroll (bg-white/90 backdrop-blur-xl)
+- Logo: /images/smartai-logo.png (h-7, brightness-150 contrast-125)
+- Links: Home, About Us, Services (dropdown with 6 items), Blogs, Contact Us
+- Top bar (hidden mobile): Phone +91 9811131136, Email contact@smartai.net.in
+- Right side: "Sign In" text link + "Let's get started" gradient button
+- When authenticated: show username + "Logout" button
+- Mobile: hamburger menu, full-screen slide from right
+- Services dropdown has all 6 service names linking to their pages
+
+================================================================================
+                           FOOTER COMPONENT
+================================================================================
+
+File: src/components/Footer.tsx
+- Background: #0F172A (dark)
+- 4 columns:
+
+  Column 1 (Brand):
+  - Logo: /images/smartai-logo.png (h-8, brightness-200)
+  - Description: "Smart AI is a forward-thinking technology and consulting company, offering customized digital solutions, advisory services, and technical training programs. Our core strength lies in solving complex challenges through a combination of deep domain expertise, agile development methodologies, and data-driven strategies."
+  - GST: "GST Number: 09AALFI4939H1ZX"
+  - Phone: +91 9811131136 (with phone icon)
+  - Email: contact@smartai.net.in (with mail icon)
+  - LinkedIn icon linking to https://www.linkedin.com/company/smart-ai
+
+  Column 2 (Services):
+  - Heading: "ALL IT SERVICES"
+  - Links: Center of Excellence (CoE), Technical Trainings, Application Development, Consultancy Services, Software as a Service (SaaS), Solution Engineering
+
+  Column 3 (Pages):
+  - Heading: "PAGES"
+  - Links: Home, About Us, Services, Blogs, Contact Us
+
+  Column 4 (Latest News):
+  - Heading: "LATEST NEWS"
+  - 3 blog posts with thumbnails:
+    * "Digital Transformation Trends in 2025: What Businesses Should Expect" — June 17, 2025
+    * "How Smart AI Optimizes IT Infrastructure for Performance and Cost" — June 17, 2025
+    * "The Benefits of Managed IT Services for Growing Businesses" — June 17, 2025
+
+- Bottom bar: "Copyright © 2025 Smart AI. All Rights Reserved."
+
+================================================================================
+                           WATERMARK COMPONENT
+================================================================================
+
+File: src/components/Watermark.tsx
+- Large centered logo image (600px x 600px)
+- Opacity: 0.08 (8%)
+- Filter: grayscale(100%) brightness(150%) contrast(90%)
+- Position: absolute, inset-0, centered with flex
+- z-index: 0 (behind all content)
+- pointer-events: none
+- Placed inside EVERY section that has relative positioning
+
+================================================================================
+                           HOME PAGE (/)
+================================================================================
+
+File: src/pages/Home.tsx
+
+--- SECTION 1: HERO ---
+- Full viewport height (100dvh), flex centered
+- Video background: /videos/hero-bg.mp4 (autoPlay, loop, muted, playsInline)
+- Dark overlay: bg-gradient-to-b from-dark/75 via-dark/50 to-dark + bg-gradient-to-r from-dark/60 via-transparent to-dark/60
+- Canvas 2D particle field (blue dots, connect on proximity)
+- Animated grid overlay (opacity 0.02)
+- Floating orbs: 6 radial gradient circles with Framer Motion animate (x, y, scale oscillation)
+- Content centered with motion animations:
+
+  Badge: "Smart AI" with Sparkles icon, glassmorphism pill (bg-white/5 border-orange-brand/30)
+  H1 Line 1: "Smart Tech for" (white)
+  H1 Line 2: "Smart Minds" (gradient from #5B9FFF to #8EC5FF to #A8D0FF)
+  Subtitle: "We design and develop future-ready platforms—LMS, city apps, dashboards, and consulting—that streamline operations, enhance transparency, and deliver real-world impact."
+  
+  CTA Buttons:
+  - "Discover Our Services" — gradient button with ArrowRight icon
+  - "Get a Free Consultation" — white outline, Play icon
+  
+  Stats bar (floating glassmorphism):
+  - 65+ Years Exp | 97K+ Platform Users | 24+ Projects | 14+ Industries
+  
+  Scroll indicator: animated bouncing circle at bottom
+
+- Scroll-driven parallax: video opacity fades on scroll, content Y shifts
+
+--- SECTION 2: SERVICES ---
+- Background: white
+- Label: "Services" in pill (bg-electric-blue-50 text-neon-blue-brand border-electric-blue-100)
+- H2: "Managed IT Services" / "for your Industry" (second line gradient)
+- 6 cards in 3x2 grid, staggered animation
+
+  Each card:
+  - bg: #F0F7FF, rounded-3xl, border-electric-blue-100
+  - Hover: border-electric-blue-300, shadow-premium, y: -8px
+  - Number label (01-06) in top-left, blue text
+  - Service image (generated, see above)
+  - Title below image, bold, hover color change to blue
+  - Arrow circle button (white bg, blue border, blue arrow, hover: blue bg white arrow)
+  
+  Card data:
+  01: "Center of Excellence (CoE)" → /services/coe
+  02: "Technical Trainings" → /services/training
+  03: "Application Development" → /services/development
+  04: "Consultancy Services" → /services/consultancy
+  05: "Software as a Service" → /services/saas
+  06: "Solution Engineering" → /services/engineering
+
+--- SECTION 3: STATS ---
+- Background: #0F172A (dark)
+- H2: "Our" + "Impact" (gradient)
+- Subtitle: "Numbers that reflect our commitment to delivering excellence."
+- 4 stat cards:
+
+  Each card: centered, p-8, bg-white/5, backdrop-blur-sm, border-white/10
+  Hover: border-electric-blue-brand/40, y: -6px
+  
+  Card 1: Users icon (gradient circle), "97K+", "Platform Users Served"
+  Card 2: TrendingUp icon, "24+", "Projects Delivered"
+  Card 3: Award icon, "63+", "Years Team Experience"
+  Card 4: Globe icon, "14+", "Industry Domains"
+  
+  Animated counters that spring into view
+
+--- SECTION 4: ABOUT ---
+- Background: #F0F7FF
+- Two columns:
+
+  Left: Parallax image container with Y scroll transform
+  - Main image with rotation animation on viewport enter
+  - "65+ Years Combined Expertise" floating glassmorphism badge at bottom
+  - Decorative gradient badge at top-right with "65+ Years" text, animated floating
+  
+  Right:
+  - Label: "About Smart AI" (pill)
+  - H2: "Transforming Industries with" / "Tailored Solutions" (gradient on second)
+  - Description: "With 65+ years of combined industry experience, Smart AI is a digital solution and consulting firm delivering customised platforms, intelligent dashboards, and transformation strategies to institutions and public service providers."
+  - 4 checkmark items with CheckCircle icon (orange):
+    * Custom platform development & deployment
+    * Intelligent dashboards & analytics
+    * Digital transformation strategies
+    * Domain-specific technical training programs
+  - "Learn More About Us" gradient button → /about
+
+--- SECTION 5: CTA ---
+- Background: gradient from #5B9FFF to #3A7BD5
+- Pattern overlay (CSS grid dots at 5% opacity)
+- Floating orbs (4 circles with animated y/scale)
+- H2: "Got a Tech Challenge?"
+- Subtitle: "We've Got the Solution – Let's Talk!"
+- "Contact Now" button: white bg, blue text, ArrowRight icon
+- "Explore Services" button: outline white
+
+--- SECTION 6: BLOG PREVIEW ---
+- Background: #0F172A (dark)
+- Label: "Our Blog" (pill with BookOpen icon)
+- H2: "Latest" + "Insights" (gradient)
+- Subtitle: "Stay updated with the latest trends in technology."
+- 3 blog cards in a row:
+
+  Each card: bg-white/5, border-white/10, rounded-3xl, overflow-hidden
+  Hover: border-electric-blue-brand/40, y: -8px
+  Image: aspect 16:10, hover scale 1.08
+  Category tag: pill (bg-electric-blue-brand/10 text-electric-blue-brand)
+  Title, excerpt, date with Calendar icon
+  
+  Post 1: "Digital Transformation Trends in 2025: What Businesses Should Expect" — Digital Transformation — June 17, 2025
+  Post 2: "How Smart AI Optimizes IT Infrastructure for Performance and Cost" — IT Infrastructure — June 17, 2025
+  Post 3: "The Benefits of Managed IT Services for Growing Businesses" — Managed IT — June 17, 2025
+
+- "View All Articles" outline button → /blog
+
+================================================================================
+                           ABOUT PAGE (/about)
+================================================================================
+
+File: src/pages/About.tsx
+
+--- HERO ---
+- Dark bg (#0F172A), Watermark
+- H1: "About Us" centered
+- Animated gradient underline
+
+--- SECTION 1: EXPERIENCE ---
+- White bg
+- Two columns:
+
+  Left:
+  - H2: "We have over" + "65+ years" (gradient) + "experience."
+  - Description: "With 65+ years of combined industry experience, Smart AI is a digital solution and consulting firm delivering customised platforms, intelligent dashboards, and transformation strategies to institutions and public service providers."
+  - Two cards: "Our Mission" and "Our Vision"
+  
+    Mission: "To design and deliver smart, automated solutions that adapt to our clients needs, foster agility in their operations and ensure technology is accessible for business of all sizes."
+    
+    Vision: "We aim to simplify complexity through intelligent automation that enhance decision making and accelerate digital transformation."
+
+  Right:
+  - Image grid: 1 large top (col-span-2) + 2 smaller bottom
+  - Images: /images/about/experience-1.jpg, experience-2.jpg, experience-3.jpg
+  - Hover scale 1.02 / 1.05
+
+--- SECTION 2: WHY CHOOSE US ---
+- Background: #F0F7FF
+- Label: "Why Choose Us"
+- H2: "Why Partner with" + "Smart AI?" (gradient)
+- 4 checkmark bullet points in horizontal row:
+  * Deep domain expertise in e-platform development
+  * End-to-end service: strategy, development, deployment
+  * Agile delivery for faster, reliable implementation
+  * Trusted by institutions and service-focused enterprises
+
+- Two columns:
+  Left: Large image (/images/about/why-choose.jpg) with floating trophy icon (animated bounce, blue gradient circle bg)
+  Right: Description + "Over 65 Years Experience" big counter + more paragraphs
+
+--- SECTION 3: SERVICES (8 cards) ---
+- White bg
+- Label: "Services"
+- H2: "Managed IT services" / "for your industry"
+- Row 1 (4 cards): Smart Systems Development, Tech & Management Consulting, SaaS Solutions, Application Development
+- Row 2 (4 cards): Technical Trainings, Consultancy Services, Project Management, Solution Engineering
+
+Each card:
+- Image at top (h-44, overflow-hidden, hover scale)
+- Overlapping icon circle (blue gradient, white icon, border-4 white)
+- Centered: title, description, arrow circle button
+- Hover: y -8px
+
+Card descriptions:
+1. Smart Systems Development: "Designing custom platforms—LMS, city apps, dashboards—to drive performance and engagement."
+2. Tech & Management Consulting: "Advisory for digital transformation, IT strategy, project management, and process optimisation."
+3. SaaS Solutions: "On-demand LMS, IoT dashboards, city apps, and integrated tools for operational automation."
+4. Application Development: "Tailored app development and infrastructure setup with a focus on scalability and security."
+5. Technical Trainings: "Shaping the future of education by fostering innovation, inclusivity, and lifelong learning for all."
+6. Consultancy Services: "Gain expert insights and strategic guidance to overcome IT challenges and streamline operations."
+7. Project Management: "Project management is the disciplined approach to planning, organizing, and executing tasks to achieve specific goals within defined timelines and resources."
+8. Solution Engineering: "Design and deploy scalable, tailored IT solutions that address your unique business needs and ensure long-term success."
+
+--- CTA ---
+- Blue gradient bg
+- "Ready to Transform Your Business?"
+- "Let's get started" button (white bg)
+
+================================================================================
+                           SERVICES PAGE (/services)
+================================================================================
+
+File: src/pages/Services.tsx
+
+Hero: "IT Services" title, "Smart AI IT Services" subtitle
+
+--- INTRO ---
+- Two columns: Image with "65+ Years" floating badge + text description
+
+--- SERVICE LIST ---
+6 alternating left/right cards (image | content):
+
+1. Center of Excellence (CoE)
+   Features: Digital Transformation Strategy, Process Standardization, Knowledge Management Systems, Innovation Labs Setup, Best Practices Framework, Continuous Improvement Models
+
+2. Technical Trainings
+   Features: Cloud Architecture Training, AI/ML Fundamentals, Cybersecurity Workshops, Data Analytics Programs, DevOps & CI/CD Training, Leadership in Tech
+
+3. Application Development
+   Features: Learning Management Systems, Smart City Applications, Business Intelligence Dashboards, Mobile App Development, Enterprise Web Applications, API & Integration Services
+
+4. Consultancy Services
+   Features: Digital Transformation Roadmap, IT Governance Frameworks, Process Optimization, Technology Stack Advisory, Project Management Office, Change Management
+
+5. Software as a Service
+   Features: SaaS Platform Architecture, Multi-Tenant Solutions, Auto-Scaling Infrastructure, Zero-Downtime Deployments, Enterprise Security, Usage-Based Pricing Models
+
+6. Solution Engineering
+   Features: System Architecture Design, IoT Integration, Real-Time Analytics, Data Pipeline Engineering, Microservices Architecture, Performance Optimization
+
+--- CTA ---
+Blue gradient, "Ready to Start Your Project?", "Contact Us Now" button
+
+================================================================================
+                    INDIVIDUAL SERVICE PAGES (6 pages)
+================================================================================
+
+Each page in src/pages/services/ folder:
+- Hero with breadcrumb (Services > Service Name)
+- Full-width image
+- Two-column: description + feature checkmarks
+- 4 benefit cards with icons
+- CTA section
+
+/service/coe            → ServiceCoE.tsx
+/services/training      → ServiceTraining.tsx
+/services/development   → ServiceDevelopment.tsx
+/services/consultancy   → ServiceConsultancy.tsx
+/services/saas          → ServiceSaaS.tsx
+/services/engineering   → ServiceEngineering.tsx
+
+================================================================================
+                           CONTACT PAGE (/contact)
+================================================================================
+
+File: src/pages/Contact.tsx
+
+Hero: "Contact Us" title, "Get in Touch" breadcrumb
+
+Two columns:
+Left:
+- H2: "Get in touch" + "We'll help your business" (gradient)
+- Phone: +91 9811131136 (with Phone icon)
+- Email: contact@smartai.net.in (with Mail icon)
+- 3 tags: 24/7 Support, Global Delivery, Fast Response
+
+Right:
+- Contact form: Name, Email, Subject, Message
+- Submit button
+- On submit: show success message (no backend — just client-side display)
+
+FAQ Section:
+1. What services does Smart AI offer? → "We offer Center of Excellence (CoE), Technical Trainings, Application Development, Consultancy Services, Software as a Service (SaaS), and Solution Engineering."
+2. How can I contact Smart AI? → "You can reach us at +91 981113136 or email us at contact@smartai.net.in. You can also fill out the contact form on this page."
+3. What industries do you serve? → "We serve government institutions, educational organizations, healthcare providers, financial services, and enterprise clients across multiple sectors."
+4. Where is Smart AI located? → "Smart AI is headquartered in New Delhi, India. We serve clients globally. Our GST Number is 09AALFI4939H1ZX."
+
+Location Section:
+- "Our Location" heading
+- "New Delhi, India" with MapPin icon
+- "Serving clients globally from our headquarters"
+- GST: 09AALFI4939H1ZX
+- Phone button: +91 9811131136
+
+================================================================================
+                           BLOG PAGE (/blog)
+================================================================================
+
+File: src/pages/Blog.tsx
+
+Hero: "Blog" title
+
+3 blog posts:
+1. "Digital Transformation Trends in 2025: What Businesses Should Expect" — Digital Transformation — June 17, 2025
+2. "How Smart AI Optimizes IT Infrastructure for Performance and Cost" — IT Infrastructure — June 17, 2025
+3. "The Benefits of Managed IT Services for Growing Businesses" — Managed IT — June 17, 2025
+
+Each card: image, category pill, title, excerpt, date
+
+================================================================================
+                           LOGIN PAGE (/login)
+================================================================================
+
+File: src/pages/Login.tsx
+
+- Dark bg (#0F172A) with blue gradient glow orbs (blur-120px)
+- Floating particle dots
+- Centered card: bg-white/5, backdrop-blur-xl, border-white/10, rounded-3xl
+- Logo at top (img, h-10, brightness-200)
+
+Toggle between "Sign In" and "Create Account" modes:
+
+Sign In mode:
+- Title: "Welcome Back"
+- Subtitle: "Sign in to your account"
+- Fields: Username, Password (with show/hide toggle)
+- Button: "Sign In" with LogIn icon
+
+Create Account mode:
+- Title: "Create Account"
+- Subtitle: "Get started with Smart AI"
+- Fields: Username, Display Name, Email, Password
+- Button: "Create Account" with UserPlus icon
+
+- Error display in blue (not red): bg-electric-blue-brand/10, border-electric-blue-brand/20
+- Toggle link at bottom between modes
+- "Back to home" link below card
+- All client-side only using useSimpleAuth hook
+
+================================================================================
+                           ANIMATIONS
+================================================================================
+
+Every page and component should have these animations:
+
+- ScrollReveal: fade-in (opacity 0→1, y 30→0), duration 0.6s, once: true
+- ScrollReveal direction="left": x -50→0
+- ScrollReveal direction="right": x 50→0
+- StaggerContainer: staggerChildren 0.1s
+- StaggerItem: opacity 0→1, y 30→0, duration 0.5s
+- Card hover: y -8px, scale 1.02, transition spring
+- Button hover: scale 1.02, brightness 1.1
+- Image hover inside card: scale 1.05-1.08
+- Icon circle hover: rotate 360deg
+- Floating elements: y oscillation ±8-12px, 3-5s duration, infinite
+- Gradient underline: scaleX 0→1, spring
+- Navbar: y -100→0 on load, transparent→solid on scroll
+- Mobile menu: x 100%→0, tween 0.3s
+- Counter: scale 0.5→1, spring on viewport enter
+
+================================================================================
+                           BUILD & DEPLOY
+================================================================================
+
+1. npm run build
+2. Copy /public/images to /dist/public/images
+3. Copy /public/videos to /dist/public/videos
+4. Copy /public/google-callback.html to /dist/public/
+5. Deploy /dist/public as static site
+6. Use HashRouter so all routes work on static hosting
+
+================================================================================
